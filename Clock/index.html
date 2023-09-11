@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clock</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        .jumbotron {
+            width: 80%;
+            margin: 100px;
+            padding: 100px;
+            border: 100px;
+            background-color: rgb(15, 197, 167);
+            color: azure;
+            align-items: center;
+            border-radius: 20px;
+            border-color: black;
+            border-style: groove;
+
+        }
+    </style>
+
+    <script>
+        let a, time, date;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        setInterval(() => {
+
+
+            a = new Date();
+            date = a.toLocaleDateString(undefined, options);
+            time = a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
+            document.getElementById('time').innerHTML = time + " <br> on " + date;
+        }, 1000);
+    </script>
+</head>
+
+<body>
+
+    <div class="jumbotron my-4">
+        <h1 class="display-4"><b>Time is:</b> <b><span id="time"></span></h1></b>
+        <!-- <p class="lead">Here you can know the Time</p>
+        <hr class="my-4">
+        <p>It shows Time</p> -->
+        <!-- <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p> -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
